@@ -5,10 +5,10 @@ import java.util.HashMap;
 
 public class Ticket {
     //fields
-    private String customerName;
-    private String subject;
-    private String body;
-    private HashMap<Integer,Attachment> attachments = new HashMap<>();
+    String customerName;
+    String subject;
+    String body;
+    HashMap<Integer,Attachment> attachments = new HashMap<>();
 
     public Ticket(String customerName, String subject, String body, HashMap<Integer,Attachment> attachments){
         this.customerName = customerName;
@@ -22,19 +22,19 @@ public class Ticket {
     void setCustomerName(String n){
         customerName = n;
     }
-    public String getCustomerName(){
+    String getCustomerName(){
         return customerName;
     }
     void setSubject(String s){
         subject = s;
     }
-    public String getSubject(){
+    String getSubject(){
         return subject;
     }
     void setBody(String b){
         body = b;
     }
-    public String getBody(){
+    String getBody(){
         return body;
     }
     void setAttachments(HashMap<Integer, Attachment> a) {

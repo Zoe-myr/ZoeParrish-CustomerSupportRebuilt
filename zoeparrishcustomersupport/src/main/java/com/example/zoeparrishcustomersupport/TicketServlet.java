@@ -119,7 +119,7 @@ public class TicketServlet extends HttpServlet {
     */
     }
 
-    private void viewTicket(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void viewTicket(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String idString = request.getParameter("ticketId");
         int id = Integer.parseInt(idString);
         Ticket ticket = ticketDB.get(id);
@@ -128,6 +128,8 @@ public class TicketServlet extends HttpServlet {
         }
         request.setAttribute("ticketId",idString);
         request.setAttribute("ticket",ticket);
+
+        request.getRequestDispatcher("WEB-INF/jsp/view/viewTicket.jsp").forward(request,response);
 
             /*
             out.println("<html><body><h1>Ticket</h1>");
