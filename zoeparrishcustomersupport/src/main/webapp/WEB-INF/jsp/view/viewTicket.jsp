@@ -1,5 +1,5 @@
 <%--@elvariable id="ticketId" type="java.lang.String"--%>
-<%--@elvariable id="ticket" type="com.example.zoeparrishcustomersupport"--%>
+<%--@elvariable id="ticket" type="com.example.zoeparrishcustomersupport.Ticket"--%>
 
 <html>
 <body>
@@ -14,10 +14,10 @@
         Attachments:
         <c:forEach items="${ticket.attachments}" var="attachment" varStatus="status">
             <c:if test="${!status.first}">, </c:if>
-                <a href="<c:url value="/ticket">
-                    <c:param name="action" value="downlaod" />
-                    <c:param name="ticketId" value="${ticketId}" />
-                    <c:param name="attachemnt" value="${attachment.name}" />
+                <a href="<c:url value='/ticket'>
+                    <c:param name='action' value='download' />
+                    <c:param name='ticketId' value='${ticketId}' />
+                    <c:param name='attachment' value='${attachment.name}' />
                     </c:url>"><c:out value="${attachment.name}"/></a>
         </c:forEach>
     </c:if>

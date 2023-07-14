@@ -12,7 +12,6 @@ import jakarta.servlet.http.Part;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.util.HashMap;
 
 
@@ -177,12 +176,18 @@ public class TicketServlet extends HttpServlet {
         }
     }
 
-    private void listTickets(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void listTickets(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.setAttribute("ticketDB",this.ticketDB);
+        request.getRequestDispatcher("WEB-INF/jsp/view/listTickets.jsp").forward(request,response);
+
+        /*
         PrintWriter out = response.getWriter();
         out.println("<html><body><h2>Tickets</h2>");
         out.println("<a href =\"ticket?action=create\">Create Ticket</a><br><br>");
 
+
         if (ticketDB.size()==0){
+
             out.println("There are no Tickets yet");
         }else{
             for (int id : ticketDB.keySet()){
@@ -193,5 +198,6 @@ public class TicketServlet extends HttpServlet {
             }
         }
         out.println("</body></html>");
+        */
     }
 }

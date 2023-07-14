@@ -22,19 +22,19 @@ public class Ticket {
     void setCustomerName(String n){
         customerName = n;
     }
-    String getCustomerName(){
+    public String getCustomerName(){
         return customerName;
     }
     void setSubject(String s){
         subject = s;
     }
-    String getSubject(){
+    public String getSubject(){
         return subject;
     }
     void setBody(String b){
         body = b;
     }
-    String getBody(){
+    public String getBody(){
         return body;
     }
     void setAttachments(HashMap<Integer, Attachment> a) {
