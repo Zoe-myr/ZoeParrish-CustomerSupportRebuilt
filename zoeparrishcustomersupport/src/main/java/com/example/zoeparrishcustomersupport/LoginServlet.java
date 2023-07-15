@@ -23,7 +23,11 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        if(session.getAttribute("username") != null){
+        if (request.getParameter("logout") != null){
+            session.invalidate();
+            response.sendRedirect("login");
+            return;
+        }else if(session.getAttribute("username") != null){
             response.sendRedirect("ticket");
             return;
         }
