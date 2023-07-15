@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/WEB-INF/jsp/view/base.jsp" value="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/WEB-INF/jsp/view" />
         <entry key="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/WEB-INF/jsp/view/login.jsp" value="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/WEB-INF/jsp/view" />
+        <entry key="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/WEB-INF/jsp/view/sessions.jsp" value="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/WEB-INF/jsp/view" />
         <entry key="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/WEB-INF/jsp/view/viewTicket.jsp" value="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/WEB-INF/jsp/view" />
         <entry key="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/zoeparrishcustomersupport/src/main/webapp" />
       </map>
