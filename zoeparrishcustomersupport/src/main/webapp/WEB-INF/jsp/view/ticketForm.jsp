@@ -3,6 +3,7 @@
         <title>Create a New Ticket</title>
     </head>
     <body>
+        <a href="<c:url value='/login'><c:param name='logout' ></c:url>">LogOut</a>
         <h2>Create a ticket</h2>
         <form action="ticket" method="post" enctype="multipart/form-data">
             <input type="hidden" name="action" value="create">
