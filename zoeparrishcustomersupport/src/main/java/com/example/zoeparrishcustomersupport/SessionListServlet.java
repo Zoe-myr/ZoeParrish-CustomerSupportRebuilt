@@ -17,8 +17,8 @@ public class SessionListServlet extends HttpServlet {
             return;
         }
         request.setAttribute("numSessions",SessionListUtility.getNumberOfSessions());
-        request.setAttribute("sessionsList",SessionListUtility.getAllSessions());
-        request.getRequestDispatcher("/WEB_INF/jsp/view/sessions.jsp").forward(request,response);
+        request.setAttribute("sessionList",SessionListUtility.getAllSessions());
+        request.getRequestDispatcher("/WEB-INF/jsp/view/sessions.jsp").forward(request,response);
     }
 
     @Override
