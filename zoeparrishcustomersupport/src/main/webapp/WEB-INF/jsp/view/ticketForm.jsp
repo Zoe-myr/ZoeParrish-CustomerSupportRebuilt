@@ -5,13 +5,16 @@
     <body>
         <a href="<c:url value='/login'><c:param name='logout' /></c:url>">LogOut</a>
         <h2>Create a ticket</h2>
-        <form action="ticket" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="action" value="create">
-            Name:<input type="text" name="name"><br>
-            Subject:<input type="text" name="subject"><br>
-            Issue:<input type="text" name= "body"><br>
-            <input type="file" name="file1"><br>
+
+        <form:form method="POST" action="create" modelAttribute="ticket" enctype="multipart/form-data">
+            <form:label path="title">Title: </form:label>
+            <form:input path="title"/><br>
+            <form:label path="subject">Subject: </form:label>
+            <form:input path="subject"/><br>
+            <form:label path="body">Issue: </form:label><br>
+            <form:textarea path="body"/>
+            <input type="file" path="attachment"><br>
             <input type="submit">
-        </form>
+        </form:form>
     </body>
 </html>
