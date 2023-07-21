@@ -7,8 +7,8 @@
         <h2>Create a ticket</h2>
 
         <form:form method="POST" action="create" modelAttribute="ticket" enctype="multipart/form-data">
-            <form:label path="title">Title: </form:label>
-            <form:input path="title"/><br>
+            <form:label path="name">Name: </form:label>
+            <form:input path="name"/><br>
             <form:label path="subject">Subject: </form:label>
             <form:input path="subject"/><br>
             <form:label path="body">Issue: </form:label><br>

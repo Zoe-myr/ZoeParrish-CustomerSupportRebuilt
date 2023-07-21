@@ -1,6 +1,6 @@
 package com.example.zoeparrishcustomersupport.site;
 
-import com.example.zoeparrishcustomersupport.Attachment;
+import com.example.zoeparrishcustomersupport.site.Attachment;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -21,25 +21,25 @@ public class Ticket {
     public Ticket(){}
 
     //basic get/set
-    void setCustomerName(String n){
+    public void setCustomerName(String n){
         customerName = n;
     }
     public String getCustomerName(){
         return customerName;
     }
-    void setSubject(String s){
+    public void setSubject(String s){
         subject = s;
     }
     public String getSubject(){
         return subject;
     }
-    void setBody(String b){
+    public void setBody(String b){
         body = b;
     }
     public String getBody(){
         return body;
     }
-    void setAttachments(HashMap<Integer, Attachment> a) {
+    public void setAttachments(HashMap<Integer, Attachment> a) {
         this.attachments = a;
     }
     public Collection<Attachment> getAttachments(){
