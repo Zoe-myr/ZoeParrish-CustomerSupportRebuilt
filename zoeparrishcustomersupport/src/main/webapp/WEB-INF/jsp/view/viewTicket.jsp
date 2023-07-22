@@ -3,7 +3,7 @@
 
 <html>
 <body>
-    <a href="<c:url value='/login'><c:param name='logout' /></c:url>">LogOut</a>
+    <a href="<c:url value='/logout'/>">LogOut</a>
     <h2>Ticket #<c:out value="${ticketId}"/></h2>
 
     Customer Name: <c:out value="${ticket.customerName}"/><br>

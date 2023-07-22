@@ -9,11 +9,13 @@
     <c:if test="${loginFailed == true}">
         <b><c:out value="The username or password is invalid"/></b>
     </c:if>
-    <form action="<c:url value='/login'/>" method="post">
-        Username: <input type="text" name="username"><br>
-        Password: <input type="password" name="password"><br>
-        <br>
-        <input type="submit" value="Log In">
-    </form>
+
+    <form:form method="POST" action="login" modelAttribute="loginForm">
+        <form:label path="username">Username: </form:label>
+        <form:input path="username"/> <br>
+        <form:label path="password">Password:</form:label>
+        <form:input path="password"/> <br>
+        <input type="submit">
+    </form:form>
 </body>
 </html>

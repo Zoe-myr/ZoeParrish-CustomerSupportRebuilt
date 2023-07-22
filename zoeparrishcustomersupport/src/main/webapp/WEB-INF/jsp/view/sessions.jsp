@@ -4,7 +4,7 @@
   <title>Sessions Admin</title>
 </head>
 <body>
-    <a href="<c:url value='/login'><c:param name='logout' /></c:url>">LogOut</a>
+    <a href="<c:url value='/logout'/>">LogOut</a>
     <h2>Sessions</h2>
     There are <c:out value="${numSessions}"/> active sessions.
 
