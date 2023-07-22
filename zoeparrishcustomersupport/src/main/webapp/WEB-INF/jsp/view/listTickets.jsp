@@ -6,20 +6,15 @@
 <body>
     <a href="<c:url value='/login'><c:param name='logout' /></c:url>">LogOut</a>
     <h2>Tickets</h2>
-    <a href="<c:url value="/ticket">
-        <c:param name="action" value="create" />
-    </c:url> ">Create Ticket</a><br>
+    <a href="<c:url value="/ticket/create"/>">Create Ticket</a><br>
 
     <c:choose>
-        <c:when test="${fn:length(ticketDB) == 0}">
+        <c:when test="${ticketDB.size() == 0}">
             <i>There are no tickets currently</i>
         </c:when>
         <c:otherwise>
             <c:forEach items="${ticketDB}" var="entry">
-                Ticket ${entry.key}: <a href="<c:url value='/ticket'>
-                    <c:param name="action" value="view" />
-                    <c:param name="ticketId" value="${entry.key}"/>
-            </c:url>"><c:out value="${entry.value.subject}"/></a><br>
+                Ticket ${entry.key}: <a href="<c:url value='/ticket/view/${entry.key}'/>"><c:out value="${entry.value.subject}"/></a><br>
             </c:forEach>
         </c:otherwise>
     </c:choose>

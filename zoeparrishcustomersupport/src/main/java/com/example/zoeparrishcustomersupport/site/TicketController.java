@@ -59,14 +59,31 @@ public class TicketController {
         Ticket ticket = ticketDB.get(ticketId);
 
         if(ticket==null){
-            return new ModelAndView(new RedirectView("listTickets",true,false));
+            return new ModelAndView(new RedirectView("ticket/list",true,false));
         }
 
         model.addAttribute("ticketId",ticketId);
         model.addAttribute("ticket",ticket);
 
         return new ModelAndView("viewTicket");
+    }
+
+    @GetMapping("/{ticketId}/attachment/{attachment:.+}")
+    public View downloadTicket(@PathVariable("ticketId")int ticketId, @PathVariable("attachment")String name){
+        Ticket ticket = ticketDB.get(ticketId);
+
+        if(ticket == null){
+            return new RedirectView("listTickets",true,false);
         }
+
+
+        Attachment attachment = ticket.getAttachment(0);
+        if(attachment == null){
+            return new RedirectView("listTickets",true,false);
+        }
+
+        return new DownloadView(attachment.getName(),attachment.getContents());
+    }
 
 
     public static class TicketForm {
