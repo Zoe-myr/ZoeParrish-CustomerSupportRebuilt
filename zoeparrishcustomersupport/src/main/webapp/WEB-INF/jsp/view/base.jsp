@@ -6,4 +6,9 @@
 <head>
     <title>Customer Support</title>
 </head>
+<body>
+<div class="center">
+
+</div>
+</body>
 </html>

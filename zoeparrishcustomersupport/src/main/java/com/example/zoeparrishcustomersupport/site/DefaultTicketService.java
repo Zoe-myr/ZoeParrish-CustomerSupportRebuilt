@@ -55,6 +55,7 @@ public class DefaultTicketService implements TicketService{
         ticket.setId(entity.getId());
 
         for ( Attachment a: ticket.getAttachments()){
+            a.setTicketId(entity.getId());
             attachmentRepository.add(a);
         }
 

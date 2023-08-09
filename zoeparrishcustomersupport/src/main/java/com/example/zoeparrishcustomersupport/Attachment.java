@@ -1,4 +1,4 @@
-package com.example.zoeparrishcustomersupport.entities;
+package com.example.zoeparrishcustomersupport;
 
 import jakarta.persistence.*;
 

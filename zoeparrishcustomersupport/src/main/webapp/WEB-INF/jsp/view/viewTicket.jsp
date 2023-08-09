@@ -11,7 +11,7 @@
     Issue: <c:out value="${ticket.body}"/> <br>
 
 
-    <c:if test="${ticket.numOfAttachments > 0}">
+    <c:if test="${not empty ticket.attachments}">
         Attachments:
         <c:forEach items="${ticket.attachments}" var="attachment" varStatus="status">
             <c:if test="${!status.first}">, </c:if>
