@@ -1,6 +1,6 @@
 package com.example.zoeparrishcustomersupport.site;
 
-import com.example.zoeparrishcustomersupport.site.Attachment;
+import com.example.zoeparrishcustomersupport.entities.Attachment;
 
 import java.util.Collection;
 import java.util.HashMap;

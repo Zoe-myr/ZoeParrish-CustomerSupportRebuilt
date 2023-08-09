@@ -1,6 +1,6 @@
 package com.example.zoeparrishcustomersupport.site;
 
-import com.example.zoeparrishcustomersupport.site.Ticket;
+import com.example.zoeparrishcustomersupport.entities.Attachment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
