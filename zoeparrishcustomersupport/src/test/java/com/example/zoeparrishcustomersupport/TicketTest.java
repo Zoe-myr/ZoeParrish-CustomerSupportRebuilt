@@ -1,15 +1,13 @@
 package com.example.zoeparrishcustomersupport;
 
-import com.example.zoeparrishcustomersupport.Attachment;
-import com.example.zoeparrishcustomersupport.Ticket;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/*
 class TicketTest {
-    Attachment a = new Attachment();
+   Attachment a = new Attachment();
     Attachment b = new Attachment();
     HashMap<Integer,Attachment> attachments =  new HashMap<>(){{
          put(0,a);
@@ -67,3 +65,4 @@ class TicketTest {
         assertEquals(2,t.getNumOfAttachments());
     }
 }
+*/

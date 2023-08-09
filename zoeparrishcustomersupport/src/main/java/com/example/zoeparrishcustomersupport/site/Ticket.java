@@ -2,17 +2,26 @@ package com.example.zoeparrishcustomersupport.site;
 
 import com.example.zoeparrishcustomersupport.entities.Attachment;
 
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ticket {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     //fields
+    long id;
     String customerName;
     String subject;
     String body;
-    HashMap<Integer, Attachment> attachments = new HashMap<>();
+    List<Attachment> attachments = new ArrayList<>();
 
-    public Ticket(String customerName, String subject, String body, HashMap<Integer,Attachment> attachments){
+    public Ticket(String customerName, String subject, String body, List<Attachment> attachments){
         this.customerName = customerName;
         this.subject = subject;
         this.body = body;
@@ -39,11 +48,11 @@ public class Ticket {
     public String getBody(){
         return body;
     }
-    public void setAttachments(HashMap<Integer, Attachment> a) {
+    public void setAttachments(List<Attachment> a) {
         this.attachments = a;
     }
-    public Collection<Attachment> getAttachments(){
-        return this.attachments.values();
+    public List<Attachment> getAttachments(){
+        return this.attachments;
     }
 
     //gets # of attachments
@@ -53,19 +62,12 @@ public class Ticket {
 
     //adds an attachment
     void addAttachment(Attachment a) {
-        if (this.attachments == null) {
-            attachments.put(0, a);
-        } else {
-            attachments.put(attachments.size(), a);
-        }
+
+        attachments.add(a);
     }
     //gets an attachment specified by the id
     Attachment getAttachment(int x){
         return attachments.get(x);
     }
 
-    //get all attachments in a collection
-    Collection<Attachment> getAllAttachments(){
-        return attachments.values();
-    }
 }

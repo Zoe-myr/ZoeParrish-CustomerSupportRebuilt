@@ -14,7 +14,7 @@
         </c:when>
         <c:otherwise>
             <c:forEach items="${ticketDB}" var="entry">
-                Ticket ${entry.key}: <a href="<c:url value='/ticket/view/${entry.key}'/>"><c:out value="${entry.value.subject}"/></a><br>
+                Ticket ${entry.id}: <a href="<c:url value='/ticket/view/${entry.id}'/>"><c:out value="${entry.subject}"/></a><br>
             </c:forEach>
         </c:otherwise>
     </c:choose>

@@ -42,15 +42,15 @@ public class Attachment implements Serializable {
     }
 
     @Lob
-    byte[] getContents(){
+    public byte[] getContents(){
         return contents;
     }
 
-    void setName(String n){
+    public void setName(String n){
         name = n;
     }
 
-    void setContents(byte[] c){
+    public void setContents(byte[] c){
         contents = c;
     }
 }

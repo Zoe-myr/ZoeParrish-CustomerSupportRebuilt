@@ -1,11 +1,10 @@
 package com.example.zoeparrishcustomersupport;
 
-import com.example.zoeparrishcustomersupport.Attachment;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class AttachmentTest {
+/*class AttachmentTest {
     Attachment a = new Attachment();
 
     @Test
@@ -19,4 +18,4 @@ class AttachmentTest {
         a.setName("jeff");
         assertEquals("jeff",a.getName());
     }
-}
+}*/

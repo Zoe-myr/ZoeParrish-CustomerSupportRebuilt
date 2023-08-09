@@ -1,9 +1,11 @@
 package com.example.zoeparrishcustomersupport.site;
 
 import com.example.zoeparrishcustomersupport.entities.Attachment;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class DefaultAttachmentRepository extends GenericJpaRepository<Long, Attachment> implements AttachmentRepository {
     @Override
     public List<Attachment> getByTicketID(Long ticketId) {

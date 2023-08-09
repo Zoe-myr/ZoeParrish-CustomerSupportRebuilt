@@ -1,6 +1,7 @@
 package com.example.zoeparrishcustomersupport.site;
 
 import com.example.zoeparrishcustomersupport.entities.Attachment;
+import jakarta.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,12 +16,14 @@ import java.util.HashMap;
 @Controller
 @RequestMapping("ticket")
 public class TicketController {
-    private volatile int ticketId = 1;
-    private HashMap<Integer, Ticket> ticketDB = new HashMap<>();
+    //private volatile int ticketId = 1;
+    //private HashMap<Integer, Ticket> ticketDB = new HashMap<>();
+
+    @Inject TicketService ticketService;
 
     @RequestMapping(value={"list",""})
     public String listTickets(Model model){
-        model.addAttribute("ticketDB",ticketDB);
+        model.addAttribute("ticketDB",ticketService.getAllTickets());
         return "listTickets";
     }
 
@@ -44,19 +47,14 @@ public class TicketController {
            ticket.addAttachment(attachment);
        }
 
-        int id;
-        synchronized (this){
-            id =this.ticketId;
-            ticketDB.put(id,ticket);
-            ticketId++;
-        }
 
-        return new RedirectView("view/"+id,true,false);
+       ticketService.save(ticket);
+        return new RedirectView("view/"+ticket.getId(),true,false);
     }
 
     @GetMapping("view/{ticketId}")
     public ModelAndView viewTicket(Model model, @PathVariable("ticketId")int ticketId){
-        Ticket ticket = ticketDB.get(ticketId);
+        Ticket ticket = ticketService.getTicket(ticketId);
 
         if(ticket==null){
             return new ModelAndView(new RedirectView("ticket/list",true,false));
@@ -70,7 +68,7 @@ public class TicketController {
 
     @GetMapping("/{ticketId}/attachment/{attachment:.+}")
     public View downloadTicket(@PathVariable("ticketId")int ticketId, @PathVariable("attachment")String name){
-        Ticket ticket = ticketDB.get(ticketId);
+        Ticket ticket = ticketService.getTicket(ticketId);
 
         if(ticket == null){
             return new RedirectView("listTickets",true,false);
